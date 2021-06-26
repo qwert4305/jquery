@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<style>
+#color{
+    width: 100px;
+    height: 100px;
+    border: 1px solid;
+}
+</style>
+<script>
+
+$(document).ready(function(){ // 혹은 $(function(){}); 
+// id 에 onclick 으로 처리 시
+// 반복 클릭 시     
+$('.button').on('click', function(){
+    $me = $(this);
+    $me.toggleClass('off');
+    if($me.is(".off")){
+        $('#color').css('border', '1px solid red');
+    }else {
+        $('#color').css('border', '1px solid black');
+    }
+  });
+}) 
+
+// 함수로 처리 시
+// 1번 클릭 시 
+function changeColor(){
+ $('#color').css('border', '1px solid red'); 
+}
+</script>
+</head>
+<body>
+    <div id="color" class="color"></div>
+    <!--button 으로 처리 시-->
+    <button type="button" id="button" onclick='changeColor()' class="button">css변경</button>
+    <!--input button 으로 처리 시-->
+    <!-- <input type="button" id="button2" onclick='changeColor()' value="css변경"> -->
+</body>
+</html>
