@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<style>
+    .show{
+        width: 100px;
+        height: 100px;
+        border : 1px solid black;
+    }
+    .color{
+        border : 1px solid red;
+    }
+</style>
+<script>
+    $(document).ready(function(){
+        var check = false;
+        $('#allcheck').on('click', function(){
+            // 토글 (false->true, true->false 변경시킴)
+            check = !check; 
+            if(check){
+                // h1 태그의 show , color class 추가
+                $('h1').addClass('show color');
+                alert('체크');
+            } else {
+                // h1 태그의 color class 만 삭제 
+                $('h1').removeClass('color');
+                alert('체크해제');
+            }
+        })
+    })
+</script>
+</head>
+<body>
+    <input type="checkbox" id="allcheck" class="allcheck">
+    <h1 class="show color">체크</h1>
+    
+</body>
+</html>
