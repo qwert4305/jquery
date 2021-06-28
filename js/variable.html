@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+
+        // 2021.06.29 : js+jquery 완전정복 - 위키북스 p.9 ~ 36 
+        // 변수  
+
+        // 변수 종류 
+        // 1.1 숫자형 -> (정수)
+        var age = 30;
+
+        // 1.2 실수
+        var height = 175.9;
+        
+        // 2. 문자형
+        var name = "김모모";
+
+        // 3. 논리형 (boolean)
+        var isLogin = false;
+
+        // 4. undefined (선언만, 값 할당 아직)
+        var userName;
+
+        // 5. null (선언만, 값 할당을 '없음' 으로 처리)
+        var id = null; // 'null'은 문자형
+
+        // 6. 함수
+        function login(){
+
+        }
+        var login = login; // 로그인() 함수를 login 변수에 담음
+
+        // 7. 클래스
+        function AClass(){
+
+        }
+        var AC = AClass; // AClass 를 변수 AC에 담음
+
+        // 8. 객체
+        function object(){
+
+        }
+        var object = new object(); // new 연산자로 object 객체 생성해 메모리에 올린 후 변수 object 에 담음
+
+
+
+        // 변수 null 로 초기화
+        var data1 = 0; // 정수
+        var data2 = ""; // 문자
+        var data3 = false; // 논리 (boolean)
+        var data4 = null; // 객체 (!=undefined -> 변수 자체가 생성 안되어있고 값 할당도 아예 안 한 상태, null -> 변수는 있는데 값이 '없는' 상태로 초기화)
+
+
+
+        // 초기값 변수에 대입 후 값 변경
+        var data1 = 10;
+        data1 = 20;
+        data1 = 30;
+
+
+
+        // 문자를 변수에 담고 그 변수를 또 다른 변수에 담음
+        var data2 = "졸립당";
+        var sleepy = data2;
+        
+
+
+        // 변수 재사용
+        // 재사용 전  
+        document.write('안녕하세요. 저는 김모모 입니다.' , '<br>');
+        document.write('안녕하세요. 저는 김모모 입니다.' , '<br>');
+        document.write('안녕하세요. 저는 김모모 입니다.' , '<br>');
+        document.write('안녕하세요. 저는 김모모 입니다.' , '<br>');
+        document.write('안녕하세요. 저는 김모모 입니다.' , '<br>');
+        
+        // 재사용 후 
+        var hi = "아졸려"; // 4개의 인사 바꾸고 싶으면 아졸려만 바꾸면 됨 
+        document.write( hi +'. 저는 김모모 입니다.' , '<br>');
+        document.write( hi +'. 저는 김모모 입니다.' , '<br>');
+        document.write( hi +'. 저는 김모모 입니다.' , '<br>');
+        document.write( hi +'. 저는 김모모 입니다.' , '<br>');
+        
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
