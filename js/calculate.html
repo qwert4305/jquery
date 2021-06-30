@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=a, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        // 2021.07.01 
+        // 연산자
+
+        // 1. 숫자 연산자
+        // 더하기 
+        var a = 10;
+        var result = a + 20 +30;
+        document.write(result + '<br>');
+
+        // 곱하기 , 나누기
+        var a = 5;
+        var b = 20;
+        var result = a * b / 10 ;
+        document.write(result + '<br>');
+
+        // 나누기의 나머지 
+        var result = 5 % 2;
+        document.write(result + '<br>');
+
+        // 홀수 , 짝수 
+        var num = 5 ; 
+        // or var num = 5 % 2;
+        // if (num == 1)
+        if(num % 2 == 1){
+            document.write('홀수' + '<br>');
+        } else {
+            document.write('짝수');
+        }
+
+        // 2. 문자 연산자
+        var str1 = '안녕하세요';
+        var result = str1 + '자바스크립트입니다.';
+        document.write(result + '<br>');
+
+
+        // 3. 복합 연산자
+        var a = 10;
+        //a = a + 10;
+        a += 10;
+        document.write(a + '<br>');
+
+
+        // 4. 증감 연산자
+        // ++
+        var a = 10;
+        // a = a + 1;
+        // a += 1; 
+         a++;
+         document.write(a + '<br>');
+
+
+         // --
+         var b = 10;
+         //b = b - 1;
+         //b -= 1;
+         b--;
+         document.write(b + '<br>');
+
+
+         // 5. 전위 , 후위 연산자
+         // 전위 (변수를 담기 전에 계산을 함)
+         var a = 10;
+         var b;
+         b = ++a; 
+         // a = a + 1;
+         // b = a;
+         document.write(b +'<br>'); // 11
+
+         // 후위 (변수에 담은 후에 계산을 함)
+         var a = 10;
+         var b = 0;
+         b = a++;
+         // b = a;
+         // b = a + 1;
+         document.write(b +'<br>'); // 10
+
+
+
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
