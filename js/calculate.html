@@ -83,6 +83,34 @@
          // b = a + 1;
          document.write(b +'<br>'); // 10
 
+         // 6. 예제
+         // 6.1 문자열 합치기
+         var first = '최';
+         var second = '모모';
+         var name = first + second;
+         document.write(name + '<br>');
+
+         // 6.2 복합연산자
+         var a = 10;
+         a += 20; // a = a + 20;
+         document.write(a + '<br>');
+
+         // 6.3 증감연산자
+         var b = 10;
+         b ++ ;
+
+         // 6.4 전위연산자
+         var c = 10;
+         var d = ++c; // c를 우선 +1 시킨 후 변수d 에 담음 
+         document.write('c:'+c); // 11
+         document.write('d:'+d); // 11
+         
+
+         // 6.5 후위연산자
+         var e = 10;
+         var f = e++; //  e를 우선 변수 f에 담은 후 +1
+         document.write('e:'+e); // 11
+         document.write('f:'+f); // 10 -> 얘가 중요!!!!!!!
 
 
         
