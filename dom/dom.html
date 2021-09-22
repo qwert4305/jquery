@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        
+        // 2021.09.20
+        // 자바스크립트 DOM
+
+        // 1. JQuery 란? : 자바스크립트의 DOM 을 쉽게 사용하기 위해 만든 라이브러리
+
+        // 2. DOM (Document Object Model) 란? : document 와 관련된 객체들의 집합
+        // ex> html에서 <div id="target"> 을 작성 -> document 에서 <div id="target"> 과 1:1 매칭되는 DOM 객체 생성 div(#target) -> 개발자가 생성된 DOM 객체에 접근 가능 #target
+        // DOM 객체에는 Node, Element, HTMLElement, Document, HTMLDocument 객체가 있다. 
+
+        // 2.1 Node 객체 
+        // 노드란 ? 태그, 주석, 텍스트 모두 
+        // 노드 객체 : 1) document 에 존재하는 모든 태그, 주석, 텍스트 들이 객체화된 것
+        //            2) DOM 객체 중 최상위 객체
+
+
+        // 2.2 Element 객체
+        // Element 란? 모든 노드 (주석, 텍스트 제외)
+        // Element 객체 : 1) document 에 존재하는 모든 노드(주석, 텍스트 제외)들이 객체화된 것
+        //                2) Node객체 + Element 객체 
+
+
+        // 2.3 HTMLElement 객체
+        // HTMLElement 란? HTML에만 있는 노드
+        // HTMLElement 객체 : 1) html에 존재하는 모든 노드들이 객체화된 것
+        //                    2) Node객체 + Element 객체 + HTMLElement 객체
+
+
+        // 2.4 Document 객체 
+        // Document 란? HTML, XML 문서
+        // Document 객체 : 1) HTML, XML doucment 에 있는 모든 노드, 이벤트, 속성, 텍스트, 주석들이 객체화된 것
+        //                 2) Node객체 +  Document객체
+
+
+        // 2.5 HTMLDocument 객체 
+        // HTMLDocument 란? html 문서
+        // HTMLDocument 객체 : 1) HTML document 에 있는 모든 노드들이 객체화된 것
+        //                     2) Node객체 + Document객체 + HTMLDocument객체 
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
