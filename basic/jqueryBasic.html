@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+    
+        // 2021.09.23
+        // jquery 기초 
+    
+        // 1. js 대신 jquery 를 사용하는 이유
+        // 1.1 DOM 객체에 접근하기가 수월하다.
+
+        $(document).ready(function(){
+            // 예제1. id 가 header 인 노드를 찾아 border 스타일 변경하기
+            // js 경우
+            var header = document.getElementById('header');
+            header.style.border='4px solid #f00';
+
+            // jquery 경우
+            $('#header').css('border', '4px solid #f00');
+
+            // 예제2. 태그이름이 p인 노드를 찾아 border 스타일 변경하기
+            // js 경우
+            var p = document.getElementsByTagName('p');
+                for(var i=0; i<p.length; i++){
+                    p[i].style.border='4px solid #f00';
+                }
+            
+            // jquery 경우
+            $('p').css('border', 'solid 4px #f00');
+
+            // 예제3. div 의 자식 p요소 중 클래스 test가 적용된 요소 모두 찾아 border 스타일 변경하기
+            // js 경우
+            var p2 = document.getElementsByClassName('test');
+                for(var i=0; i<p2.length; i++){
+                    pList = p2[i];
+
+                    if(pList.tagName === 'P'){
+                        if(pList.parentNode.tagName === 'DIV'){
+                            // pList.style.border='4px solid #f00';
+                        }
+                    }
+                }
+            
+            // jquery 경우
+            $('div > p.test').css('border', '4px solid #f00');
+
+        })
+
+        // 2. DOMContentLoaded 이벤트 vs load 이벤트
+        // DOMContentLoaded(document.ready) 이벤트 : 웹 브라우저가 웹 페이지를 읽은 후 태그와 1:1 매핑되는 DOM 객체 생성 후 발생
+        //                                          이 이벤트 발생 시점에는 이미지나 플래시와 같은 무거운 콘텐츠 아직 로드 안됨
+        // window.onload 이벤트 : DOMContentLoaded 이벤트 먼저 발생 후 이미지, 플래시 콘텐츠 모두 로드된 후 load 이벤트 발생
+
+
+        // 3. $() 란?
+        // $ 는 'JQuery 호출할게요' 라고 생각하자. (예시 : $("div")는 jQuery("div")와 같음)
+        // $() 는 JQuery에 있는 함수에 접근 (예시 : $("div") 는 div 를 매개변수 값으로 제이쿼리의 () 함수를 호출한 것)
+    
+    </script>
+    <style>
+        #header{
+            width: 100px;
+            height: 100px;
+            border: solid 1px black;
+        }
+    </style>
+</head>
+<body>
+    <div id="header"></div>
+    <p>p1</p>
+    <p>p2</p>
+    <p>p3</p>
+    <div>
+        <p class="test">test1</p>
+        <p class="test">test2</p>
+        <p class="test">test3</p>
+    </div>
+</body>
+</html>
