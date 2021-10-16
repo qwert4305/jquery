@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+
+        // 2021.10.05 ~ 2021.10.06
+        // 노드 생성
+
+        $(document).ready(function(){
+            // 1. 노드 생성 -> $('dom태그')
+            var $li = $('li'); 
+
+            // 1.1. 버튼을 클릭할 때마다 li 생성
+            var count=0; 
+            $('#makingNode1').on('click', function(){
+                count++; // 버튼 클릭할 때 마다 count 1 씩 증가
+                var innerHtml = '<li id="'+count+'">'+count+'</li>'; // li 생성
+                $('#firstUl').append(innerHtml); // innerHtml
+            })
+
+            // 2. 신규노드를 첫 번째 자식노드로 추가 -> 부모노드에.prepend(자식노드) or 자식노드를.prependTo(부모노드)
+            $('#makingNode2').on('click', function(){
+
+                // 2.1 부모노드에.prepend(자식노드)
+                var childLi = $('<li>0</li>'); // 추가할 자식노드
+                $('#secondUl').prepend(childLi); // 부모노드에 자식노드 prepend
+                // 혹은
+                $('#secondUl').prepend('<li>0</li>');
+
+                // 2.2 자식노드를.prependTo(부모노드)
+                var childLi2 = $('<li>0</li>'); // 추가할 자식노드
+                $(childLi2).prependTo('#secondUl'); // 자식노드를 부모노드에 prependTo
+                // 혹은
+                $('<li>0</li>').prependTo('#secondUl');
+               
+            })
+
+            // 3. 신규노드를 마지막 번째 자식노드로 추가 -> 부모노드에.append(자식노드) or 자식노드를.appendTo(부모노드)
+            $('#makingNode3').on('click', function(){
+                
+                // 3.1 부모노드에.append(자식노드)
+                $('#thirdUl').append('<li>3</li>');
+                // 혹은 
+                var childLi3 = '<li>3</li>';
+                $('#thirdUl').append(childLi3);
+
+                // 3.1 자식노드를.appendTo(부모노드)
+                $('<li>3</li>').appendTo('#thirdUl');
+                // 혹은 
+                var childLi3 = '<li>3</li>';
+                $(childLi3).appendTo('#thirdUl');
+
+            })
+
+             // 4. 특정노드의 이전위치에 신규노드 추가 -> 신규노드를.insertBefore(특정노드앞에) or 특정노드앞에.before(신규노드)
+             $('#makingNode4').on('click', function(){
+                
+                // 4.1 신규노드를.insertBefore(특정노드앞에) 넣기
+                $('<li>1.5</li>').insertBefore('#firthUl li.select');
+                // 혹은 
+                var childLi4 = '<li>1.5</li>';
+                $(childLi4).insertBefore('#firthUl li.select');
+
+                // 4.2 특정노드앞에.before(신규노드) 넣기
+                $('#firthUl li.select').before('<li>1.5</li>');
+                // 혹은 
+                var childLi4 = '<li>1.5</li>';
+                $('#firthUl li.select').before(childLi4);
+            })
+
+             // 5. 특정노드의 다음에 신규노드 추가 -> 신규노드를.insertAfter(특정노드위에) or 특정노드뒤에.after(신규노드)
+             $('#makingNode5').on('click', function(){
+                
+                // 5.1 신규노드를.insertAfter(특정노드뒤에) 넣기
+                $('<li>2.5</li>').insertAfter('#fithUl li.select');
+                // 혹은 
+                var childLi5 = '<li>2.5</li>';
+                $(childLi5).insertAfter('#fithUl li.select');
+
+                // 5.2 특정노드뒤에.afte(신규노드) 넣기
+                $('#fithUl li.select').after('<li>2.5</li>');
+                // 혹은 
+                var childLi5 = '<li>2.5</li>';
+                $('#fithLi5 li.select').after(childLi5);
+            })
+            
+        })
+
+    </script>
+</head>
+<body>
+    <button type="button" id="makingNode1">노드생성1</button>
+    <ul id="firstUl"></ul>
+    
+    <button type="button" id="makingNode2">노드생성2</button>
+    <ul id="secondUl">
+        <li>1</li>
+        <li>2</li>
+    </ul>
+
+    <button type="button" id="makingNode3">노드생성3</button>
+    <ul id="thirdUl">
+        <li>1</li>
+        <li>2</li>
+    </ul>
+
+    <button type="button" id="makingNode4">노드생성4</button>
+    <ul id="firthUl">
+        <li>1</li>
+        <li class="select">2</li>
+    </ul>
+
+    <button type="button" id="makingNode5">노드생성5</button>
+    <ul id="fithUl">
+        <li>1</li>
+        <li class="select">2</li>
+    </ul>
+
+
+</body>
+</html>
