@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+
+        // 2021.10.07 ~ 2021.10.10
+        // 노드 이동 , 삭제 , 노드 내용 수정
+
+        $(document).ready(function(){
+            // 1. 노드 이동
+            $('ul.menu1 li').on('click', function(){
+                
+                // 1.1 자식 li 클릭 시 맨 위로 이동
+                $('ul.menu1').prepend(this); // 부모노드에.prepend(자식노드를)
+
+                // 1.2 자식 li 클릭 시 맨 아래로 이동
+                $('ul.menu1').append(this); // 부모노드에.append(자식노드를)
+
+                // 1.3 클릭한 li를 select 앞으로 이동
+                $(this).insertBefore('ul.menu li.select');
+
+                // 1.4 클릭한 li를 select 뒤로 이동
+                $(this).insertAfter('ul.menu li.select');
+            }) 
+
+            // 2. 노드 삭제
+            $('ul.menu2 li').on('click', function(){
+
+                // 2.1 클릭한 li 노드 삭제
+                $(this).remove(); 
+            })
+
+            // 2.2 모든 자식 노드 삭제 
+            $('#remove1').on('click', function(){
+                $('ul.menu2').children().remove();
+            })
+
+            // 2.3 인덱스 값이 짝수인 노드만 삭제
+            $('#remove2').on('click', function(){
+                $('ul.menu2 li').each(function(index){
+                    if(index % 2 == 0 && index > 0){
+                       $('ul.menu2 li').eq(index).css("display", "none"); // remove 는 에러남
+                    }
+                })
+            })
+
+            // 3. 노드 내용 수정 
+            $('ul.menu3 li').on('click', function(){
+                console.log($('ul.menu3').html()); // <li>1</li><li>2</li><li>3</li> 출력 -> 태그까지 모두 출력
+                console.log($('ul.menu3').text()); // 1 2 3 출력 -> 태그 제외 보여지는 내용만 출력
+
+                // 3.1 li 클릭 시 하이퍼링크로 내용 수정
+                $(this).html('<a href="www.naver.com">네이버로이동</a>'); // li 태그 사라지고 <a href="www.naver.com">네이버로이동</a> 로 태그 포함 모두 변경됨
+                $(this).text('네이버로이동'); // <li>네이버로이동</li> 로 변경됨
+            })
+
+            // 3.2 html()로 모든 자식노드 삭제
+            $('#remove3').on('click', function(){
+                $('ul.menu3').html(""); // 자기자신(ul) 제외 모든 자식노드의 내용을 ""로 변경
+            })
+        })
+    </script>
+</head>
+<body>
+    <ul class="menu1">
+        <li>1</li>
+        <li>2</li>
+        <li class="select">3</li>
+    </ul>
+
+    <ul class="menu2">
+        <li>1</li>
+        <li>2</li>
+        <li class="select">3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+    <button type="button" id="remove1">자식노드삭제</button>
+    <button type="button" id="remove2">짝수노드삭제</button>
+
+    <ul class="menu3">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+    <button type="button" id="remove3">모든내용삭제</button>
+</body>
+</html>
